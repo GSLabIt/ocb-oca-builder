@@ -81,7 +81,15 @@ def _max_ge_version(specs: list[str]) -> tuple[int, ...]:
 def _parse_req_file(path: Path, groups: dict, skip: frozenset) -> None:
     for raw in path.read_text(encoding="utf-8", errors="replace").splitlines():
         line = raw.strip()
-        if not line or line.startswith("#") or line.startswith("-r") or line.startswith("-c"):
+        if not line or line.startswith("#"):
+            continue
+        # Direct references — local paths (./x, /x, ../x), editable installs
+        # (-e), includes (-r/-c), or VCS/URL installs (git+https://…) — are
+        # not ordinary name+specifier requirements. _PKG_LINE_RE's [A-Za-z0-9_.-]+
+        # name group happily (mis)matches a leading "." in "./addons/..." as a
+        # bogus package name, corrupting the aggregated file with garbage like
+        # "-/addons/iot_box_image/...whl" that pip then rejects outright.
+        if line.startswith(("-e", "-r", "-c", "./", "../", "/")) or "://" in line:
             continue
         m = _PKG_LINE_RE.match(line)
         if not m:

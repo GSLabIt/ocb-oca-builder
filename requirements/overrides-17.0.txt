@@ -1,0 +1,10 @@
+# Explicit version pins for Odoo 17.0 builds.
+# Each line replaces the aggregated constraint for that package.
+# Use when aggregated constraints produce impossible combinations
+# (e.g. an old repo pins <X while a newer one requires >=X).
+
+# idna: google-books-api-wrapper hard-pins idna==3.4 on every published
+# version (1.0.0 through 1.0.5) — not a range, an exact pin baked into its
+# own metadata. Nothing else in the aggregate needs a higher floor, so pin
+# down to satisfy it instead of dropping the dependent package.
+idna==3.4
