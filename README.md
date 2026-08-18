@@ -1,4 +1,4 @@
-# saas-docker-images
+# ocb-oca-builder
 
 Dockerfile, entrypoint, and CI workflow to build Odoo images bundling
 [OCA/OCB](https://github.com/OCA/OCB) plus a configurable set of OCA (or any
@@ -14,8 +14,9 @@ injects `HOST`/`PORT`/`USER`/`PASSWORD`).
 
 - Docker Desktop with BuildKit / `docker buildx` enabled
 - Python 3 (for the discovery/aggregate scripts)
-- Registry credentials (Docker Hub / GHCR) and a GitHub token if you need to
-  discover repos in a private org
+- A GitHub token if you're running the discovery script locally and want a
+  higher API rate limit, or need to discover repos in a private org — in CI
+  this is handled automatically by the workflow's built-in `GITHUB_TOKEN`
 
 ## Quick examples (local)
 
