@@ -8,7 +8,7 @@
 #        ODOO_VERSION=18.0 INCLUDE_PRIVATE=1 bash scripts/clone-repos-from-yaml.sh
 #   3. git clone --depth 1 --branch 18.0 https://github.com/OCA/OCB.git ocb
 #   4. python scripts/aggregate_requirements.py
-#   5. bash scripts/build-and-push.sh ghcr.io/yourorg/odoo-oca:18
+#   5. bash scripts/build-and-push.sh ghcr.io/yourorg/odoo-ocb:18
 #
 # In CI the workflow handles steps 1-4 automatically (sync-sources job).
 set -euo pipefail

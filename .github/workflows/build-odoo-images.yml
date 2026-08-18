@@ -155,7 +155,7 @@ jobs:
           ODOO_VERSION="${{ matrix.odoo_version }}"
           ODOO_TAG="${ODOO_VERSION%.0}"
           PROFILE="${{ matrix.profile }}"
-          IMAGE="ghcr.io/${NS}/odoo-oca:${ODOO_TAG}"
+          IMAGE="ghcr.io/${NS}/odoo-ocb:${ODOO_TAG}"
           [ -n "${PROFILE}" ] && IMAGE="${IMAGE}-${PROFILE}"
           echo "image=${IMAGE}" >> "$GITHUB_OUTPUT"
 

@@ -23,19 +23,19 @@ injects `HOST`/`PORT`/`USER`/`PASSWORD`).
 Dry-run (prints the build command without executing it):
 
 ```bash
-bash scripts/build-and-push.sh --dry-run ghcr.io/yourorg/odoo-oca:18
+bash scripts/build-and-push.sh --dry-run ghcr.io/yourorg/odoo-ocb:18
 ```
 
 Local build, no push:
 
 ```bash
-bash scripts/build-and-push.sh --no-push ghcr.io/yourorg/odoo-oca:18
+bash scripts/build-and-push.sh --no-push ghcr.io/yourorg/odoo-ocb:18
 ```
 
 Build + push (make sure you're authenticated with the registry first):
 
 ```bash
-bash scripts/build-and-push.sh ghcr.io/yourorg/odoo-oca:18
+bash scripts/build-and-push.sh ghcr.io/yourorg/odoo-ocb:18
 ```
 
 `build-and-push.sh` only builds the image — it expects `ocb/`, `src/` and
@@ -61,7 +61,7 @@ org, platforms) and, per target:
 
 To add a new build target, drop a new `images/<name>.yml` file (copy an
 existing one and adjust `odoo_version`/`org`/etc.) — no workflow changes
-needed. Images always publish to GHCR (`ghcr.io/<repo-owner>/odoo-oca:<tag>`),
+needed. Images always publish to GHCR (`ghcr.io/<repo-owner>/odoo-ocb:<tag>`),
 authenticated with the built-in `GITHUB_TOKEN` — no registry secrets to
 configure.
 
