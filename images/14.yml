@@ -1,0 +1,7 @@
+name: "14"
+odoo_version: "14.0"
+python_version: "3.10"
+org: "OCA"
+profile: ""
+base_orgs: "OCA"
+platforms: "linux/amd64"

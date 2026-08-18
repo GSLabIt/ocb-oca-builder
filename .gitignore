@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local build outputs (recreated by the CI sync-sources job / build-and-push.sh)
+/aggregations/
+/ocb/
+/src/
+/build-addons/
+
+# Local env / secrets
+.env
+*.local

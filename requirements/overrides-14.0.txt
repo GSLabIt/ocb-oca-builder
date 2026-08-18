@@ -1,0 +1,8 @@
+# Explicit version pins for Odoo 14.0 / Python 3.10 builds.
+# Each line replaces the aggregated constraint for that package.
+# Use when aggregated constraints produce impossible combinations
+# (e.g. an old repo pins <X while a newer one requires >=X).
+
+# cryptography: old OCA repos pin <23.2, new ones require >=43.
+# Odoo 14 + paramiko + pyOpenSSL work fine with 42.x.
+cryptography>=38.0.0,<43.0.0

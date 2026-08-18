@@ -1,0 +1,2 @@
+# Placeholder tracked for static Dockerfile linting.
+# The CI workflow generates and overwrites this file before the image build.

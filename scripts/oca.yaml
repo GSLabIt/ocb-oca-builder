@@ -1,0 +1,1164 @@
+OCA/account-analytic:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/account-analytic.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/account-analytic
+  shell_command_after:
+  - if [ -f extra-addons/OCA/account-analytic/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/account-analytic/requirements.txt; fi
+OCA/account-budgeting:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/account-budgeting.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/account-budgeting
+  shell_command_after:
+  - if [ -f extra-addons/OCA/account-budgeting/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/account-budgeting/requirements.txt; fi
+OCA/account-closing:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/account-closing.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/account-closing
+  shell_command_after:
+  - if [ -f extra-addons/OCA/account-closing/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/account-closing/requirements.txt; fi
+OCA/account-consolidation:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/account-consolidation.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/account-consolidation
+  shell_command_after:
+  - if [ -f extra-addons/OCA/account-consolidation/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/account-consolidation/requirements.txt; fi
+OCA/account-financial-reporting:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/account-financial-reporting.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/account-financial-reporting
+  shell_command_after:
+  - if [ -f extra-addons/OCA/account-financial-reporting/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/account-financial-reporting/requirements.txt; fi
+OCA/account-financial-tools:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/account-financial-tools.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/account-financial-tools
+  shell_command_after:
+  - if [ -f extra-addons/OCA/account-financial-tools/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/account-financial-tools/requirements.txt; fi
+OCA/account-fiscal-rule:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/account-fiscal-rule.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/account-fiscal-rule
+  shell_command_after:
+  - if [ -f extra-addons/OCA/account-fiscal-rule/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/account-fiscal-rule/requirements.txt; fi
+OCA/account-invoice-reporting:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/account-invoice-reporting.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/account-invoice-reporting
+  shell_command_after:
+  - if [ -f extra-addons/OCA/account-invoice-reporting/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/account-invoice-reporting/requirements.txt; fi
+OCA/account-invoicing:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/account-invoicing.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/account-invoicing
+  shell_command_after:
+  - if [ -f extra-addons/OCA/account-invoicing/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/account-invoicing/requirements.txt; fi
+OCA/account-payment:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/account-payment.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/account-payment
+  shell_command_after:
+  - if [ -f extra-addons/OCA/account-payment/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/account-payment/requirements.txt; fi
+OCA/account-reconcile:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/account-reconcile.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/account-reconcile
+  shell_command_after:
+  - if [ -f extra-addons/OCA/account-reconcile/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/account-reconcile/requirements.txt; fi
+OCA/bank-payment:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/bank-payment.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/bank-payment
+  shell_command_after:
+  - if [ -f extra-addons/OCA/bank-payment/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/bank-payment/requirements.txt; fi
+OCA/bank-statement-import:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/bank-statement-import.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/bank-statement-import
+  shell_command_after:
+  - if [ -f extra-addons/OCA/bank-statement-import/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/bank-statement-import/requirements.txt; fi
+OCA/brand:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/brand.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/brand
+  shell_command_after:
+  - if [ -f extra-addons/OCA/brand/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/brand/requirements.txt; fi
+OCA/business-requirement:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/business-requirement.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/business-requirement
+  shell_command_after:
+  - if [ -f extra-addons/OCA/business-requirement/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/business-requirement/requirements.txt; fi
+OCA/calendar:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/calendar.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/calendar
+  shell_command_after:
+  - if [ -f extra-addons/OCA/calendar/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/calendar/requirements.txt; fi
+OCA/commission:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/commission.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/commission
+  shell_command_after:
+  - if [ -f extra-addons/OCA/commission/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/commission/requirements.txt; fi
+OCA/connector:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/connector.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/connector
+  shell_command_after:
+  - if [ -f extra-addons/OCA/connector/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/connector/requirements.txt; fi
+OCA/connector-interfaces:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/connector-interfaces.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/connector-interfaces
+  shell_command_after:
+  - if [ -f extra-addons/OCA/connector-interfaces/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/connector-interfaces/requirements.txt; fi
+OCA/connector-telephony:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/connector-telephony.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/connector-telephony
+  shell_command_after:
+  - if [ -f extra-addons/OCA/connector-telephony/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/connector-telephony/requirements.txt; fi
+OCA/contract:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/contract.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/contract
+  shell_command_after:
+  - if [ -f extra-addons/OCA/contract/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/contract/requirements.txt; fi
+OCA/credit-control:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/credit-control.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/credit-control
+  shell_command_after:
+  - if [ -f extra-addons/OCA/credit-control/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/credit-control/requirements.txt; fi
+OCA/crm:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/crm.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/crm
+  shell_command_after:
+  - if [ -f extra-addons/OCA/crm/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/crm/requirements.txt; fi
+OCA/currency:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/currency.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/currency
+  shell_command_after:
+  - if [ -f extra-addons/OCA/currency/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/currency/requirements.txt; fi
+OCA/ddmrp:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/ddmrp.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/ddmrp
+  shell_command_after:
+  - if [ -f extra-addons/OCA/ddmrp/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/ddmrp/requirements.txt; fi
+OCA/delivery-carrier:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/delivery-carrier.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/delivery-carrier
+  shell_command_after:
+  - if [ -f extra-addons/OCA/delivery-carrier/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/delivery-carrier/requirements.txt; fi
+OCA/dms:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/dms.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/dms
+  shell_command_after:
+  - if [ -f extra-addons/OCA/dms/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/dms/requirements.txt; fi
+OCA/e-commerce:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/e-commerce.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/e-commerce
+  shell_command_after:
+  - if [ -f extra-addons/OCA/e-commerce/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/e-commerce/requirements.txt; fi
+OCA/edi:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/edi.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/edi
+  shell_command_after:
+  - if [ -f extra-addons/OCA/edi/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/edi/requirements.txt; fi
+OCA/event:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/event.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/event
+  shell_command_after:
+  - if [ -f extra-addons/OCA/event/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/event/requirements.txt; fi
+OCA/fleet:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/fleet.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/fleet
+  shell_command_after:
+  - if [ -f extra-addons/OCA/fleet/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/fleet/requirements.txt; fi
+OCA/helpdesk:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/helpdesk.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/helpdesk
+  shell_command_after:
+  - if [ -f extra-addons/OCA/helpdesk/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/helpdesk/requirements.txt; fi
+OCA/hr:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/hr.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/hr
+  shell_command_after:
+  - if [ -f extra-addons/OCA/hr/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/hr/requirements.txt; fi
+OCA/hr-attendance:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/hr-attendance.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/hr-attendance
+  shell_command_after:
+  - if [ -f extra-addons/OCA/hr-attendance/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/hr-attendance/requirements.txt; fi
+OCA/hr-expense:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/hr-expense.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/hr-expense
+  shell_command_after:
+  - if [ -f extra-addons/OCA/hr-expense/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/hr-expense/requirements.txt; fi
+OCA/hr-holidays:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/hr-holidays.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/hr-holidays
+  shell_command_after:
+  - if [ -f extra-addons/OCA/hr-holidays/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/hr-holidays/requirements.txt; fi
+OCA/intrastat-extrastat:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/intrastat-extrastat.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/intrastat-extrastat
+  shell_command_after:
+  - if [ -f extra-addons/OCA/intrastat-extrastat/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/intrastat-extrastat/requirements.txt; fi
+OCA/iot:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/iot.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/iot
+  shell_command_after:
+  - if [ -f extra-addons/OCA/iot/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/iot/requirements.txt; fi
+OCA/knowledge:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/knowledge.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/knowledge
+  shell_command_after:
+  - if [ -f extra-addons/OCA/knowledge/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/knowledge/requirements.txt; fi
+OCA/l10n-italy:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/l10n-italy.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/l10n-italy
+  shell_command_after:
+  - if [ -f extra-addons/OCA/l10n-italy/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/l10n-italy/requirements.txt; fi
+OCA/maintenance:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/maintenance.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/maintenance
+  shell_command_after:
+  - if [ -f extra-addons/OCA/maintenance/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/maintenance/requirements.txt; fi
+OCA/management-system:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/management-system.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/management-system
+  shell_command_after:
+  - if [ -f extra-addons/OCA/management-system/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/management-system/requirements.txt; fi
+OCA/manufacture:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/manufacture.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/manufacture
+  shell_command_after:
+  - if [ -f extra-addons/OCA/manufacture/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/manufacture/requirements.txt; fi
+OCA/manufacture-reporting:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/manufacture-reporting.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/manufacture-reporting
+  shell_command_after:
+  - if [ -f extra-addons/OCA/manufacture-reporting/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/manufacture-reporting/requirements.txt; fi
+OCA/margin-analysis:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/margin-analysis.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/margin-analysis
+  shell_command_after:
+  - if [ -f extra-addons/OCA/margin-analysis/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/margin-analysis/requirements.txt; fi
+OCA/mis-builder:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/mis-builder.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/mis-builder
+  shell_command_after:
+  - if [ -f extra-addons/OCA/mis-builder/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/mis-builder/requirements.txt; fi
+OCA/mis-builder-contrib:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/mis-builder-contrib.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/mis-builder-contrib
+  shell_command_after:
+  - if [ -f extra-addons/OCA/mis-builder-contrib/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/mis-builder-contrib/requirements.txt; fi
+OCA/multi-company:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/multi-company.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/multi-company
+  shell_command_after:
+  - if [ -f extra-addons/OCA/multi-company/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/multi-company/requirements.txt; fi
+OCA/odoo-pim:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/odoo-pim.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/odoo-pim
+  shell_command_after:
+  - if [ -f extra-addons/OCA/odoo-pim/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/odoo-pim/requirements.txt; fi
+OCA/operating-unit:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/operating-unit.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/operating-unit
+  shell_command_after:
+  - if [ -f extra-addons/OCA/operating-unit/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/operating-unit/requirements.txt; fi
+OCA/partner-contact:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/partner-contact.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/partner-contact
+  shell_command_after:
+  - if [ -f extra-addons/OCA/partner-contact/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/partner-contact/requirements.txt; fi
+OCA/pms:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/pms.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/pms
+  shell_command_after:
+  - if [ -f extra-addons/OCA/pms/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/pms/requirements.txt; fi
+OCA/pos:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/pos.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/pos
+  shell_command_after:
+  - if [ -f extra-addons/OCA/pos/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/pos/requirements.txt; fi
+OCA/product-attribute:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/product-attribute.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/product-attribute
+  shell_command_after:
+  - if [ -f extra-addons/OCA/product-attribute/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/product-attribute/requirements.txt; fi
+OCA/product-kitting:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/product-kitting.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/product-kitting
+  shell_command_after:
+  - if [ -f extra-addons/OCA/product-kitting/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/product-kitting/requirements.txt; fi
+OCA/product-pack:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/product-pack.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/product-pack
+  shell_command_after:
+  - if [ -f extra-addons/OCA/product-pack/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/product-pack/requirements.txt; fi
+OCA/product-variant:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/product-variant.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/product-variant
+  shell_command_after:
+  - if [ -f extra-addons/OCA/product-variant/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/product-variant/requirements.txt; fi
+OCA/project:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/project.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/project
+  shell_command_after:
+  - if [ -f extra-addons/OCA/project/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/project/requirements.txt; fi
+OCA/project-agile:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/project-agile.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/project-agile
+  shell_command_after:
+  - if [ -f extra-addons/OCA/project-agile/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/project-agile/requirements.txt; fi
+OCA/project-reporting:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/project-reporting.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/project-reporting
+  shell_command_after:
+  - if [ -f extra-addons/OCA/project-reporting/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/project-reporting/requirements.txt; fi
+OCA/purchase-reporting:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/purchase-reporting.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/purchase-reporting
+  shell_command_after:
+  - if [ -f extra-addons/OCA/purchase-reporting/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/purchase-reporting/requirements.txt; fi
+OCA/purchase-workflow:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/purchase-workflow.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/purchase-workflow
+  shell_command_after:
+  - if [ -f extra-addons/OCA/purchase-workflow/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/purchase-workflow/requirements.txt; fi
+OCA/queue:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/queue.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/queue
+  shell_command_after:
+  - if [ -f extra-addons/OCA/queue/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/queue/requirements.txt; fi
+OCA/reporting-engine:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/reporting-engine.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/reporting-engine
+  shell_command_after:
+  - if [ -f extra-addons/OCA/reporting-engine/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/reporting-engine/requirements.txt; fi
+OCA/report-print-send:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/report-print-send.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/report-print-send
+  shell_command_after:
+  - if [ -f extra-addons/OCA/report-print-send/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/report-print-send/requirements.txt; fi
+OCA/rest-framework:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/rest-framework.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/rest-framework
+  shell_command_after:
+  - if [ -f extra-addons/OCA/rest-framework/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/rest-framework/requirements.txt; fi
+OCA/rma:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/rma.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/rma
+  shell_command_after:
+  - if [ -f extra-addons/OCA/rma/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/rma/requirements.txt; fi
+OCA/sale-prebook:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/sale-prebook.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/sale-prebook
+  shell_command_after:
+  - if [ -f extra-addons/OCA/sale-prebook/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/sale-prebook/requirements.txt; fi
+OCA/sale-promotion:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/sale-promotion.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/sale-promotion
+  shell_command_after:
+  - if [ -f extra-addons/OCA/sale-promotion/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/sale-promotion/requirements.txt; fi
+OCA/sale-reporting:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/sale-reporting.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/sale-reporting
+  shell_command_after:
+  - if [ -f extra-addons/OCA/sale-reporting/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/sale-reporting/requirements.txt; fi
+OCA/sale-workflow:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/sale-workflow.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/sale-workflow
+  shell_command_after:
+  - if [ -f extra-addons/OCA/sale-workflow/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/sale-workflow/requirements.txt; fi
+OCA/search-engine:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/search-engine.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/search-engine
+  shell_command_after:
+  - if [ -f extra-addons/OCA/search-engine/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/search-engine/requirements.txt; fi
+OCA/server-auth:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/server-auth.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/server-auth
+  shell_command_after:
+  - if [ -f extra-addons/OCA/server-auth/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/server-auth/requirements.txt; fi
+OCA/server-backend:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/server-backend.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/server-backend
+  shell_command_after:
+  - if [ -f extra-addons/OCA/server-backend/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/server-backend/requirements.txt; fi
+OCA/server-brand:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/server-brand.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/server-brand
+  shell_command_after:
+  - if [ -f extra-addons/OCA/server-brand/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/server-brand/requirements.txt; fi
+OCA/server-env:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/server-env.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/server-env
+  shell_command_after:
+  - if [ -f extra-addons/OCA/server-env/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/server-env/requirements.txt; fi
+OCA/server-tools:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/server-tools.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/server-tools
+  shell_command_after:
+  - if [ -f extra-addons/OCA/server-tools/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/server-tools/requirements.txt; fi
+OCA/server-ux:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/server-ux.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/server-ux
+  shell_command_after:
+  - if [ -f extra-addons/OCA/server-ux/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/server-ux/requirements.txt; fi
+OCA/sign:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/sign.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/sign
+  shell_command_after:
+  - if [ -f extra-addons/OCA/sign/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/sign/requirements.txt; fi
+OCA/social:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/social.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/social
+  shell_command_after:
+  - if [ -f extra-addons/OCA/social/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/social/requirements.txt; fi
+OCA/stock-logistics-barcode:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/stock-logistics-barcode.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/stock-logistics-barcode
+  shell_command_after:
+  - if [ -f extra-addons/OCA/stock-logistics-barcode/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/stock-logistics-barcode/requirements.txt; fi
+OCA/stock-logistics-reporting:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/stock-logistics-reporting.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/stock-logistics-reporting
+  shell_command_after:
+  - if [ -f extra-addons/OCA/stock-logistics-reporting/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/stock-logistics-reporting/requirements.txt; fi
+OCA/stock-logistics-transport:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/stock-logistics-transport.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/stock-logistics-transport
+  shell_command_after:
+  - if [ -f extra-addons/OCA/stock-logistics-transport/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/stock-logistics-transport/requirements.txt; fi
+OCA/stock-logistics-warehouse:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/stock-logistics-warehouse.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/stock-logistics-warehouse
+  shell_command_after:
+  - if [ -f extra-addons/OCA/stock-logistics-warehouse/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/stock-logistics-warehouse/requirements.txt; fi
+OCA/stock-logistics-workflow:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/stock-logistics-workflow.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/stock-logistics-workflow
+  shell_command_after:
+  - if [ -f extra-addons/OCA/stock-logistics-workflow/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/stock-logistics-workflow/requirements.txt; fi
+OCA/storage:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/storage.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/storage
+  shell_command_after:
+  - if [ -f extra-addons/OCA/storage/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/storage/requirements.txt; fi
+OCA/survey:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/survey.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/survey
+  shell_command_after:
+  - if [ -f extra-addons/OCA/survey/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/survey/requirements.txt; fi
+OCA/timesheet:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/timesheet.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/timesheet
+  shell_command_after:
+  - if [ -f extra-addons/OCA/timesheet/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/timesheet/requirements.txt; fi
+OCA/vertical-association:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/vertical-association.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/vertical-association
+  shell_command_after:
+  - if [ -f extra-addons/OCA/vertical-association/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/vertical-association/requirements.txt; fi
+OCA/vertical-hotel:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/vertical-hotel.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/vertical-hotel
+  shell_command_after:
+  - if [ -f extra-addons/OCA/vertical-hotel/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/vertical-hotel/requirements.txt; fi
+OCA/vertical-rental:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/vertical-rental.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/vertical-rental
+  shell_command_after:
+  - if [ -f extra-addons/OCA/vertical-rental/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/vertical-rental/requirements.txt; fi
+OCA/web:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/web.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/web
+  shell_command_after:
+  - if [ -f extra-addons/OCA/web/requirements.txt ]; then python3 -m pip install --no-cache-dir
+    -r extra-addons/OCA/web/requirements.txt; fi
+OCA/web-api:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/web-api.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/web-api
+  shell_command_after:
+  - if [ -f extra-addons/OCA/web-api/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/web-api/requirements.txt; fi
+OCA/web-api-contrib:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/web-api-contrib.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/web-api-contrib
+  shell_command_after:
+  - if [ -f extra-addons/OCA/web-api-contrib/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/web-api-contrib/requirements.txt; fi
+OCA/website:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/website.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/website
+  shell_command_after:
+  - if [ -f extra-addons/OCA/website/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/website/requirements.txt; fi
+OCA/website-cms:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:OCA/website-cms.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/OCA/website-cms
+  shell_command_after:
+  - if [ -f extra-addons/OCA/website-cms/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/OCA/website-cms/requirements.txt; fi
+shopinvader/odoo-shopinvader:
+  defaults:
+    depth: 10
+  remotes:
+    origin:
+      url: git@github.com:shopinvader/odoo-shopinvader.git
+  merges:
+  - origin $ODOO_VERSION
+  target: extra-addons/odoo-shopinvader
+  shell_command_after:
+  - if [ -f extra-addons/odoo-shopinvader/requirements.txt ]; then python3 -m pip install
+    --no-cache-dir -r extra-addons/odoo-shopinvader/requirements.txt; fi
