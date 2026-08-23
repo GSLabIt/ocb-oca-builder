@@ -8,3 +8,8 @@
 # own metadata. Nothing else in the aggregate needs a higher floor, so pin
 # down to satisfy it instead of dropping the dependent package.
 idna==3.4
+
+# requests: same package, same story — google-books-api-wrapper hard-pins
+# requests==2.28.2 on every published version, conflicting with an
+# unconditional requests>=2.31.0 elsewhere in the aggregate.
+requests==2.28.2
