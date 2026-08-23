@@ -123,14 +123,28 @@ def main() -> None:
         _parse_req_file(req, groups, _SKIP_PACKAGES)
 
     # Per-version overrides: requirements/overrides-{odoo_version}.txt
-    # Each line here REPLACES the aggregated constraints for that package.
+    # Each line here REPLACES the aggregated constraints for that package —
+    # for the *package*, not for the exact (extras, marker) combination the
+    # aggregator happened to group it under. Two repos can declare the same
+    # package under different environment markers (e.g. one plain, one
+    # "; python_version >= ...") and land in different `groups` keys; if the
+    # override only replaced the one matching key, the other marker variant
+    # would survive untouched and reintroduce the exact conflict the override
+    # was written to resolve (seen with idna: an override pinning it to 3.4
+    # left a marker-qualified "idna>=3.6" from another repo standing right
+    # next to it in aggregated.txt, still an unconditional requirement in this
+    # environment). Delete every existing group for an overridden package
+    # name — any extras/marker variant — before inserting the override's own.
     if odoo_version:
         override_path = Path("requirements") / f"overrides-{odoo_version}.txt"
         if override_path.exists():
             overrides: dict[tuple[str, str, str], set[str]] = defaultdict(set)
             _parse_req_file(override_path, overrides, frozenset())
+            override_names = {name for (name, _extras, _marker) in overrides}
+            for key in [k for k in groups if k[0] in override_names]:
+                del groups[key]
             for key, specs in overrides.items():
-                groups[key] = specs  # hard replace
+                groups[key] = specs
             print(f"Applied overrides from {override_path}")
 
     if not groups:
