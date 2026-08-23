@@ -78,9 +78,21 @@ def _max_ge_version(specs: list[str]) -> tuple[int, ...]:
     return best
 
 
-def _parse_req_file(path: Path, groups: dict, skip: frozenset) -> None:
-    for raw in path.read_text(encoding="utf-8", errors="replace").splitlines():
-        line = raw.strip()
+def _parse_req_file(
+    path: Path, groups: dict, skip: frozenset, *, verbatim: bool = False
+) -> None:
+    """Parse a requirements-style file into `groups`.
+
+    `verbatim=True` (used for override files) keeps each specifier exactly
+    as written — no widening of exact pins, no dropping of upper bounds.
+    Override files are a hand-authored final decision for that package
+    (sometimes an explicit range like ">=38,<43" to keep a known-bad newer
+    release out), not one more heterogeneous old requirements.txt to run
+    through the "loosen and reconcile dozens of repos" heuristic that
+    exists for everything else `_parse_req_file` sees.
+    """
+    for raw_line in path.read_text(encoding="utf-8", errors="replace").splitlines():
+        line = raw_line.strip()
         if not line or line.startswith("#"):
             continue
         # Direct references — local paths (./x, /x, ../x), editable installs
@@ -98,7 +110,8 @@ def _parse_req_file(path: Path, groups: dict, skip: frozenset) -> None:
         if name in skip:
             continue
         extras = (m.group("extras") or "").strip()
-        spec = _loosen((m.group("spec") or "").strip())
+        raw_spec = (m.group("spec") or "").strip()
+        spec = raw_spec if verbatim else _loosen(raw_spec)
         marker = (m.group("marker") or "").strip()
         groups[(name, extras, marker)].add(spec)
 
@@ -139,7 +152,7 @@ def main() -> None:
         override_path = Path("requirements") / f"overrides-{odoo_version}.txt"
         if override_path.exists():
             overrides: dict[tuple[str, str, str], set[str]] = defaultdict(set)
-            _parse_req_file(override_path, overrides, frozenset())
+            _parse_req_file(override_path, overrides, frozenset(), verbatim=True)
             override_names = {name for (name, _extras, _marker) in overrides}
             for key in [k for k in groups if k[0] in override_names]:
                 del groups[key]
@@ -153,8 +166,10 @@ def main() -> None:
 
     out_lines: list[str] = []
     for (name, extras, marker), specs in sorted(groups.items()):
-        # After _loosen, specs contain only >=X, !=X, ==X.*, or compounds thereof.
-        # Separate pure >=X.Y.Z from everything else.
+        # After _loosen, specs contain only >=X, !=X, ==X.*, or compounds thereof
+        # — except override-sourced specs (verbatim=True), which can be anything
+        # an override author wrote (e.g. an exact ==X or a >=X,<Y range) and pass
+        # through untouched. Either way, separate pure >=X.Y.Z from everything else.
         ge_only = [s for s in specs if re.fullmatch(r">=[\d.]+", s)]
         other = [s for s in specs if s not in ge_only]
 
