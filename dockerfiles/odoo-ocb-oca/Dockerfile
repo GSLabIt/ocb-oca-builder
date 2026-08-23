@@ -35,12 +35,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --no-cache-dir --upgrade pip
 
 COPY requirements/aggregated.txt /tmp/aggregated.txt
+COPY requirements/build-constraints.txt /tmp/build-constraints.txt
 # aggregate_requirements.py already widened ==x.y.z → >=x.y.z and kept highest
 # minimums, so pip's own resolver handles the rest.
+# --build-constraint pins build-time-only deps (e.g. swig, pulled in transitively
+# by pykcs11's pyproject.toml) that never appear in any module's requirements.txt
+# and so are invisible to the aggregator — see requirements/build-constraints.txt.
 # --mount=type=cache persists the compiled-wheel cache (e.g. libsass C build)
 # across Docker runs via BuildKit / GHA cache — subsequent builds skip recompilation.
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip wheel --wheel-dir /wheels -r /tmp/aggregated.txt
+    pip wheel --wheel-dir /wheels --build-constraint /tmp/build-constraints.txt \
+    -r /tmp/aggregated.txt
 
 
 # ── Stage 2: runtime image ────────────────────────────────────────────────────

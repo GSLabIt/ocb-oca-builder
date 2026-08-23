@@ -1,0 +1,21 @@
+# Constrains build-time-only tools that pip's build isolation resolves
+# transitively — these never appear in any module's requirements.txt, so
+# aggregate_requirements.py never sees or pins them. A bad release of one
+# of these breaks the wheels stage for every image, with no signal in this
+# repo pointing at the cause.
+#
+# Applied via `pip wheel --build-constraint` (PIP_BUILD_CONSTRAINT), which
+# is the only pip mechanism that reaches into isolated build environments —
+# a plain constraints file (-c / PIP_CONSTRAINT) does NOT apply there.
+#
+# swig: PyKCS11's pyproject.toml declares an unpinned `swig` build
+# dependency (the PyPI package that ships a prebuilt swig binary, used to
+# regenerate src/pykcs11_wrap.cpp at build time). swig 4.5.0 (2026-08-21)
+# removed the PyInt_Check/PyInt_AsLong/PyInt_FromLong/PyInt_FromSize_t
+# Python-3 compat macros from Lib/python/pyhead.swg. PyKCS11's generated
+# wrapper still emits PyInt_FromLong(...) calls for `long`-returning
+# functions, so it no longer compiles under swig>=4.5.0 (any Python 3
+# version): "error: 'PyInt_FromLong' was not declared in this scope".
+# Confirmed via `gh api` diff of swig/swig Lib/python/pyhead.swg between
+# tags v4.4.1 and v4.5.0 — not a PyKCS11-specific regression.
+swig<4.5.0
