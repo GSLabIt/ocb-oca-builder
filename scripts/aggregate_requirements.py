@@ -35,6 +35,11 @@ _PKG_LINE_RE = re.compile(
 _SKIP_PACKAGES: frozenset[str] = frozenset({
     "dataclasses",   # stdlib since 3.7; PyPI backport only 0.1–0.6 (Python 3.6)
     "mysqlclient",  # no valid PyPI releases; mysqlclient is the correct package name
+    # every published version (1.0.0-1.0.5) hard-pins idna==3.4 and
+    # requests==2.28.2 in its own metadata; pinning either down to satisfy it
+    # just surfaces the next conflict (requests==2.28.2 itself requires
+    # urllib3<1.27, clashing with an unrelated urllib3>=2.0.7 elsewhere).
+    "google-books-api-wrapper",
 })
 
 

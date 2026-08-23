@@ -2,14 +2,11 @@
 # Each line replaces the aggregated constraint for that package.
 # Use when aggregated constraints produce impossible combinations
 # (e.g. an old repo pins <X while a newer one requires >=X).
+#
+# google-books-api-wrapper used to require pinning idna==3.4 then
+# requests==2.28.2 here (see git history) — each pin surfaced a new
+# conflict, so the package itself is now excluded in
+# aggregate_requirements.py's _SKIP_PACKAGES instead. No override
+# needed until something else in the aggregate produces a genuine
+# cross-repo version conflict for 17.0.
 
-# idna: google-books-api-wrapper hard-pins idna==3.4 on every published
-# version (1.0.0 through 1.0.5) — not a range, an exact pin baked into its
-# own metadata. Nothing else in the aggregate needs a higher floor, so pin
-# down to satisfy it instead of dropping the dependent package.
-idna==3.4
-
-# requests: same package, same story — google-books-api-wrapper hard-pins
-# requests==2.28.2 on every published version, conflicting with an
-# unconditional requests>=2.31.0 elsewhere in the aggregate.
-requests==2.28.2
