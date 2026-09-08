@@ -1,0 +1,5 @@
+# lxml: 5.2 (2024-04) moved lxml.html.clean into a separate lxml_html_clean
+# package. Odoo 14's odoo/tools/mail.py does `from lxml.html import clean`
+# and crashes on import with lxml>=5.2 ("lxml.html.clean module is now a
+# separate project"). Odoo 17+ handle the split; 14/15/16 need the old lxml.
+lxml>=4.9.0,<5.2.0
