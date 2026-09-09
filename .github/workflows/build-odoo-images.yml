@@ -180,18 +180,6 @@ jobs:
           cache-from: type=gha,scope=${{ matrix.name }}
           cache-to: type=gha,mode=min,scope=${{ matrix.name }}
 
-      # Moving the stable version tag (for example :14) leaves the previous
-      # manifest untagged in GHCR. Remove those orphaned manifests, while
-      # retaining the current tagged image for every Odoo version/profile.
-      - name: Delete untagged image versions
-        if: success()
-        uses: actions/delete-package-versions@v5
-        with:
-          package-name: odoo-ocb
-          package-type: container
-          min-versions-to-keep: 1
-          delete-only-untagged-versions: true
-
       # Report-only by design (fail-build: false): these are upstream base
       # images (OCB + third-party OCA addons) — most CVEs surfaced here are
       # in system packages/Python deps we don't control and often can't fix
@@ -237,3 +225,22 @@ jobs:
           rm -rf ocb/ src/ aggregations/ requirements/
           docker system prune --all --force --volumes
           df -h
+
+  # Run cleanup once, after the whole matrix has published its tags. Running
+  # it inside each parallel build races with the other pushes and can delete
+  # a manifest which is still being attached to its stable tag.
+  cleanup-untagged:
+    needs: [build]
+    if: success()
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - name: Delete untagged image versions
+        uses: actions/delete-package-versions@v5
+        with:
+          package-name: odoo-ocb
+          package-type: container
+          min-versions-to-keep: 1
+          delete-only-untagged-versions: true
