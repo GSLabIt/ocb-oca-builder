@@ -231,7 +231,10 @@ jobs:
   # a manifest which is still being attached to its stable tag.
   cleanup-untagged:
     needs: [build]
-    if: success()
+    # Disabled until the GHCR manifest cleanup is made tag-safe.  The
+    # delete-package-versions action has invalidated the stable :14 manifest
+    # in production, leaving the registry tag unusable after a green build.
+    if: ${{ false }}
     runs-on: ubuntu-latest
     permissions:
       packages: write
