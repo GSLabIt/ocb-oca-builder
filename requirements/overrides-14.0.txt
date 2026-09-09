@@ -12,3 +12,7 @@ cryptography>=38.0.0,<43.0.0
 # and crashes on import with lxml>=5.2 ("lxml.html.clean module is now a
 # separate project"). Odoo 17+ handle the split; 14/15/16 need the old lxml.
 lxml>=4.9.0,<5.2.0
+
+# Odoo 14 imports PyPDF2.utils and the legacy PdfFile* API. PyPDF2 3.x
+# removed those compatibility symbols, so keep the last compatible major.
+PyPDF2>=2.0.0,<3.0.0
