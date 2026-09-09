@@ -21,9 +21,9 @@ PGDATA="${PGDATA:-/var/lib/postgresql/data}"
 # control-plane passes HOST / PORT / USER / PASSWORD (official Odoo image
 # convention).  We also accept DB_HOST / DB_PORT / DB_USER / DB_PASSWORD.
 _host="${DB_HOST:-${HOST:-}}"
-_port="${DB_PORT:-${PORT:-5432}}"
-_user="${DB_USER:-${USER:-odoo}}"
-_pass="${DB_PASSWORD:-${PASSWORD:-odoo}}"
+_port="${DB_PORT:-${PORT:-}}"
+_user="${DB_USER:-${USER:-}}"
+_pass="${DB_PASSWORD:-${PASSWORD:-}}"
 
 # ── Detect if an external config is already provided ────────────────────────
 EXTERNAL_CONF="/etc/odoo/odoo.conf"
@@ -34,8 +34,15 @@ if [ -f "${EXTERNAL_CONF}" ] && grep -qi "db_host" "${EXTERNAL_CONF}" 2>/dev/nul
     echo "[ooops] Using external config: ${EXTERNAL_CONF}"
     ODOO_CONFIG="${EXTERNAL_CONF}"
     _host="${_host:-$(awk -F'[ =]+' '/^db_host/{print $2; exit}' "${EXTERNAL_CONF}" | tr -d '[:space:]')}"
+    _port="${_port:-$(awk -F'[ =]+' '/^db_port/{print $2; exit}' "${EXTERNAL_CONF}" | tr -d '[:space:]')}"
+    _user="${_user:-$(awk -F'[ =]+' '/^db_user/{print $2; exit}' "${EXTERNAL_CONF}" | tr -d '[:space:]')}"
+    _pass="${_pass:-$(awk -F'[ =]+' '/^db_password/{print $2; exit}' "${EXTERNAL_CONF}" | tr -d '[:space:]')}"
 else
     ODOO_CONFIG="${INTERNAL_CONF}"
+
+    _port="${_port:-5432}"
+    _user="${_user:-odoo}"
+    _pass="${_pass:-odoo}"
 
     # ── Standalone mode: no external Postgres → start bundled one ───────────
     if [ -z "${_host}" ]; then
