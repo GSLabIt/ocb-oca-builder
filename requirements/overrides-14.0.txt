@@ -15,4 +15,7 @@ lxml>=4.9.0,<5.2.0
 
 # Odoo 14 imports PyPDF2.utils and the legacy PdfFile* API. PyPDF2 3.x
 # removed those compatibility symbols, so keep the last compatible major.
-PyPDF2>=2.0.0,<3.0.0
+PyPDF2>=1.26.0,<2.0.0
+
+# Odoo 14 imports the legacy URL helpers removed in Werkzeug 2.1.
+Werkzeug>=1.0.1,<2.0.0
