@@ -202,6 +202,9 @@ jobs:
       # step above); if disk pressure ever becomes a problem here, the
       # "Free disk space" step at job start is the first thing to widen.
       - name: Generate SBOM
+        # Reporting only: a Syft/GitHub download or registry inspection error
+        # must not turn a successfully pushed image into a failed build.
+        continue-on-error: true
         uses: anchore/sbom-action@v0
         with:
           image: ${{ steps.tag.outputs.image }}
@@ -210,6 +213,9 @@ jobs:
 
       - name: Scan image for known CVEs
         id: scan
+        # Reporting only: keep publishing even if Anchore cannot inspect the
+        # image or produce SARIF for a transient/tooling failure.
+        continue-on-error: true
         uses: anchore/scan-action@v7
         with:
           image: ${{ steps.tag.outputs.image }}
@@ -218,7 +224,8 @@ jobs:
           output-format: sarif
 
       - name: Upload CVE scan results to code scanning
-        if: always()
+        if: always() && steps.scan.outputs.sarif != ''
+        continue-on-error: true
         uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
