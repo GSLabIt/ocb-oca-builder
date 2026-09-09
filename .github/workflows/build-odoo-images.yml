@@ -1,9 +1,13 @@
 name: Build OCB+OCA images
 
 # Triggers:
+#   - push to main: publish the image immediately after a builder change
 #   - workflow_dispatch: manual run
 #   - schedule: every Sunday at 03:00 UTC
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
   schedule:
     - cron: "0 3 * * 0"
@@ -175,6 +179,18 @@ jobs:
           tags: ${{ steps.tag.outputs.image }}
           cache-from: type=gha,scope=${{ matrix.name }}
           cache-to: type=gha,mode=min,scope=${{ matrix.name }}
+
+      # Moving the stable version tag (for example :14) leaves the previous
+      # manifest untagged in GHCR. Remove those orphaned manifests, while
+      # retaining the current tagged image for every Odoo version/profile.
+      - name: Delete untagged image versions
+        if: success()
+        uses: actions/delete-package-versions@v5
+        with:
+          package-name: odoo-ocb
+          package-type: container
+          min-versions-to-keep: 1
+          delete-only-untagged-versions: true
 
       # Report-only by design (fail-build: false): these are upstream base
       # images (OCB + third-party OCA addons) — most CVEs surfaced here are
