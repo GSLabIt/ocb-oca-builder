@@ -70,6 +70,9 @@ configure.
 - `dockerfiles/odoo-ocb-oca/Dockerfile` — multi-stage build (wheels → runtime)
 - `dockerfiles/ocb-oca-entrypoint.sh` — hybrid entrypoint: bundled Postgres in
   standalone mode, or external Postgres if `HOST`/`DB_HOST` is set
+- Odoo 14 images pin legacy dependencies such as `PyPDF2<2`; when an external
+  `odoo.conf` is mounted, the entrypoint also reads the database credentials
+  from that file if they are not supplied as environment variables.
 - `scripts/generate-oca-gitaggregator-yaml.py` — discovers addon repos from a
   GitHub org (or reads a static manifest) and emits a git-aggregator-style YAML
 - `scripts/clone-repos-from-yaml.sh` — clones the repos listed in a manifest
