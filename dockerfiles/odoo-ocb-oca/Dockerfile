@@ -71,6 +71,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && apt-get update && apt-get install -y --no-install-recommends postgresql-16 \
  && rm -rf /var/lib/apt/lists/*
 
+# wkhtmltopdf — Odoo needs the patched-Qt build for PDF reports (headers/
+# footers). The distro package is unpatched; use the official wkhtmltopdf
+# packaging release matching the base (bookworm) and arch. apt resolves the
+# .deb's own Depends (fontconfig, xfonts-*, libx*, …).
+ARG WKHTMLTOX_VERSION=0.12.6.1-3
+RUN . /etc/os-release \
+ && arch="$(dpkg --print-architecture)" \
+ && curl -fsSL -o /tmp/wkhtmltox.deb \
+    "https://github.com/wkhtmltopdf/packaging/releases/download/${WKHTMLTOX_VERSION}/wkhtmltox_${WKHTMLTOX_VERSION}.${VERSION_CODENAME}_${arch}.deb" \
+ && apt-get update \
+ && apt-get install -y --no-install-recommends /tmp/wkhtmltox.deb \
+ && rm -f /tmp/wkhtmltox.deb \
+ && rm -rf /var/lib/apt/lists/* \
+ && wkhtmltopdf --version
+
 ENV PATH="/usr/lib/postgresql/16/bin:${PATH}"
 ENV PGDATA=/var/lib/postgresql/data
 RUN mkdir -p "${PGDATA}" && chown -R postgres:postgres "${PGDATA}" && chmod 700 "${PGDATA}"
