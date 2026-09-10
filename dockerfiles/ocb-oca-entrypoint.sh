@@ -141,5 +141,17 @@ if [ "$(basename "${first}")" = "odoo" ]; then
     fi
 fi
 
+# ── Ensure the odoo user owns its writable data dirs ────────────────────────
+# The entrypoint runs as root and gosu's down to "odoo" (uid 1000) below.
+# /var/lib/odoo/{filestore,sessions} are bind-mounted from the host and may
+# be owned by root or a mismatched uid — a previous container that ran as
+# root, a reused tenant slug, a host-side mkdir. Odoo would then fail every
+# _file_write with PermissionError and the database ends up referencing
+# filestore files that were never written ("corrupted" instance). Chown only
+# the entries that are actually wrong so this stays cheap on a large,
+# already-correct filestore.
+mkdir -p /var/lib/odoo/filestore /var/lib/odoo/sessions
+find /var/lib/odoo \! -user odoo -exec chown odoo:odoo {} + 2>/dev/null || true
+
 echo "[ooops] Executing: $*"
 exec gosu odoo "$@"
