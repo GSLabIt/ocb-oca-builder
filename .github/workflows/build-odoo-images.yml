@@ -53,6 +53,12 @@ jobs:
         run: |
           echo "=== before ==="
           df -h /
+          # ubuntu-latest ships ~20GB of toolchains we never use (Android
+          # SDK, .NET, GHC) on the same disk as the Docker/BuildKit root —
+          # a multi-repo OCB+OCA build regularly exceeds the ~14GB actually
+          # free without this, failing late in "exporting to image" with
+          # "no space left on device".
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc "${AGENT_TOOLSDIRECTORY:-/opt/hostedtoolcache}"
           docker system prune --all --force --volumes
           echo "=== after ==="
           df -h /
